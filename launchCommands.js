@@ -6,12 +6,12 @@ const commands = [
 	new SlashCommandBuilder().setName("add_trigger").setDescription("Add a command for the bot to have available").addStringOption(option=>
 			option.setName("name").setDescription("The name of the trigger? (For example: !name)").setRequired(true)
 		).addStringOption(option=>
-			option.setName("response").setDescription("The response for me to send when the command is sent. Remember to use proper grammar!").setRequired(true)
+			option.setName("response").setDescription("The response for me to send when the command is sent. Remember to use proper grammar! (Use \\n for a newline)").setRequired(true)
 		).setDefaultMemberPermissions(PermissionFlagsBits.ManageMessages).setDMPermission(false),//Don't allow in DMs because it's easier to check permissions in the server
 	new SlashCommandBuilder().setName("edit_trigger").setDescription("Edit a command for the bot to have available").addStringOption(option=>
 			option.setName("name").setDescription("The name of the trigger? (For example: !name)").setRequired(true)
 		).addStringOption(option=>
-			option.setName("response").setDescription("The response for me to send when the command is sent. Remember to use proper grammar!").setRequired(true)
+			option.setName("response").setDescription("The response for me to send when the command is sent. Remember to use proper grammar! (Use \\n for a newline)").setRequired(true)
 		).setDefaultMemberPermissions(PermissionFlagsBits.ManageMessages).setDMPermission(false),
 	new SlashCommandBuilder().setName("remove_trigger").setDescription("Remove a command for the bot to have available").addStringOption(option=>
 			option.setName("name").setDescription("The name of the trigger? (For example: !name)").setRequired(true)
