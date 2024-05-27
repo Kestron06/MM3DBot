@@ -124,7 +124,7 @@ client.on("interactionCreate",async cmd=>{
                 cmd.reply(`There is already a trigger with that name in my database.\n\n${commands.add_trigger} ${commands.edit_trigger} ${commands.remove_trigger}`);
             }
             else{
-                config.comms[cmd.options.getString("name").toLowerCase()]=cmd.options.getString("response");
+                config.comms[cmd.options.getString("name").toLowerCase()]=cmd.options.getString("response").replaceAll("\\n","\n");
                 cmd.reply(`I have logged \`${config.prefix}${cmd.options.getString("name")}\` to my triggers.\n\n\`\`\`\n${cmd.options.getString("response")}\`\`\``);
                 save();
             }
@@ -134,7 +134,7 @@ client.on("interactionCreate",async cmd=>{
                 cmd.reply(`There is no trigger with that name in my database.\n\n${commands.add_trigger} ${commands.edit_trigger} ${commands.remove_trigger}`);
             }
             else{
-                config.comms[cmd.options.getString("name").toLowerCase()]=cmd.options.getString("response");
+                config.comms[cmd.options.getString("name").toLowerCase()]=cmd.options.getString("response").replaceAll("\\n","\n");
                 cmd.reply(`I have edited the trigger \`${config.prefix}${cmd.options.getString("name")}\`.\n\n\`\`\`\n${cmd.options.getString("response")}\`\`\``);
                 save();
             }
